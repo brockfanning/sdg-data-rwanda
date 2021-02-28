@@ -41,12 +41,11 @@ inputs:
   - class: InputSdmxMl_Multiple
     path_pattern: sdmx-data/*.xml
     dimension_map:
-      UNIT_MEASURE: 'Units'
-      SERIES: 'Series'
       REF_AREA|RW: ''
-    drop_dimensions: SOURCE_DETAIL
+    drop_dimensions:
+      - SOURCE_DETAIL
     dsd: 'RWA_C_V2_SDG DSD.xml'
-    import_translation_keys: true
+    import_codes: true
   - class: InputYamlMdMeta
     # This describes the meta files, relative to the "src_dir" indicated above.
     path_pattern: meta/*-*.md
@@ -80,8 +79,8 @@ translations:
   # This pulls in translations from DSD
   - class: TranslationInputSdmx
     source: 'RWA_C_V2_SDG DSD.xml'
-    
-    
+
+
 # Reporting status extra fields
 # -----------------------------
 # This allows the build to generate stats for reporting status by additional
