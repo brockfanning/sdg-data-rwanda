@@ -44,9 +44,10 @@ inputs:
       UNIT_MEASURE: 'Units'
       SERIES: 'Series'
       REF_AREA|RW: ''
-    drop_dimensions: SOURCE_DETAIL
+    drop_dimensions:
+      - SOURCE_DETAIL
     dsd: 'RWA_C_V2_SDG DSD.xml'
-    import_translation_keys: true
+    import_codes: true
   - class: InputYamlMdMeta
     # This describes the meta files, relative to the "src_dir" indicated above.
     path_pattern: meta/*-*.md
@@ -80,8 +81,7 @@ translations:
   # This pulls in translations from DSD
   - class: TranslationInputSdmx
     source: 'RWA_C_V2_SDG DSD.xml'
-    
-    
+
 # Reporting status extra fields
 # -----------------------------
 # This allows the build to generate stats for reporting status by additional
@@ -110,9 +110,12 @@ reporting_status_extra_fields: []
 # This is the logo at the top of the automated documentation pages.
 docs_branding: SDG data build documentation
 # This displays at the top of the automated documentation homepage.
-docs_intro: This is a list of examples of endpoints and output that are
-  available on this service. Click each of the links below for more information
-  on the available output.
+docs_intro: <p>This is a summary of the resources available on this data service.
+  This data is used by <a href="https://sustainabledevelopment-rwanda.github.io/sdg-site-rwanda/">the
+  Rwanda SDG national reporting platform</a>.</p>
+  <p>SDMX data intended for use in the UN global SDG database is
+  available <a href="unsd/sdmx/all.xml">here</a>.
+  </p>
 # This can be uncommented and updated so allow links to your indicator pages.
 # The URL here should have [id] instead of the indicator ID.
 #docs_indicator_url: https://my-github-org/my-site-repository/[id]
